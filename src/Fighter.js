@@ -8,18 +8,22 @@ class Fighter {
         this.dexterity = dexterity;
         this.life = MAX_LIFE;
     }
-    fight(fighter2) {
+    fight(opponent) {
         // this method represents the game rules.
         const attack = Math.floor(Math.random() * this.strength);
-        const defense = Math.floor(Math.random() * fighter2.dexterity);
+        const defense = Math.floor(Math.random() * opponent.dexterity);
         if (attack > defense) {
-            fighter2.life -= (attack - defense);
+            opponent.life -= (attack - defense);
         }
-        if (fighter2.life < 0) {
-            fighter2.life = 0;
+        if (opponent.life < 0) {
+            opponent.life = 0;
+        }
+    }
+    isAlive() {
+        if (this.life === 0) {
+
         }
     }
 }
-
 
 module.exports = Fighter;
