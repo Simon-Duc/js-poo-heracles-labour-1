@@ -2,23 +2,21 @@
 const MAX_LIFE = 100;
 
 class Fighter {
-    constructor(name, strength, dexterity, life) {
+    constructor(name, strength, dexterity) {
         this.name = name;
         this.strength = strength;
         this.dexterity = dexterity;
         this.life = MAX_LIFE;
     }
-    fight(fighter1, fighter2) {
-        const attack = Math.floor(Math.random() * fighter1.strength);
-        const defense = Math.floor(Math.random() * fighter2.dexterity);;
-        if (attack - defense <= 0) {
-            return fighter2.life 
+    fight(fighter2) {
+        // this method represents the game rules.
+        const attack = Math.floor(Math.random() * this.strength);
+        const defense = Math.floor(Math.random() * fighter2.dexterity);
+        if (attack > defense) {
+            fighter2.life -= (attack - defense);
         }
-        else if ((fighter2.life -= (attack - defense)) <= 0) {
-            return 0;           
-        }
-        else {
-            return fighter2.life -= (attack - defense);
+        if (fighter2.life < 0) {
+            fighter2.life = 0;
         }
     }
 }
