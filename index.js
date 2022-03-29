@@ -1,11 +1,11 @@
 // First Labour : Heracles vs Nemean Lion
 // use your Figher class here
 
-const fighterClass = require("./src/Fighter");
+const Fighter = require("./src/Fighter");
 
-const heracles = new fighterClass("Heracles 🧔", 20, 6);
+const heracles = new Fighter("Heracles 🧔", 20, 6);
 
-const nemeanLion = new fighterClass("Nemean Lion 🦁", 11, 13);
+const nemeanLion = new Fighter("Nemean Lion 🦁", 11, 13);
 
 function thereCanBeOnlyOne(fighter1, fighter2) {
     for (let round = 1; fighter1.life > 0 && fighter2.life > 0; round++) {

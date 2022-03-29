@@ -19,11 +19,6 @@ class Fighter {
             opponent.life = 0;
         }
     }
-    isAlive() {
-        if (this.life === 0) {
-
-        }
-    }
 }
 
 module.exports = Fighter;
